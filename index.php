@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/../data.php';
+include 'discs/data.php';
 
 
 ?>
@@ -12,7 +12,7 @@ include __DIR__ . '/../data.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Dischi</title>
 </head>
 <body>
@@ -22,24 +22,24 @@ include __DIR__ . '/../data.php';
     </header>
 
     <main>
-    <div class="container py-4">
-        <section id="album-section">
-            <div id="album-list" class="row row-cols-5 gy-4">
-                <div class="col"  :key="album.author">
+        <div class="container py-4">
+            <section id="album-section">
+                <div id="album-list" class="row row-cols-5 gy-4">
                     <?php foreach($discs as $disc) : ?>
-                        <div id="album-card" class="text-center p-2 text-white">
-                            <img src="<?= $disc['poster'] ?>" alt="<?= $disc['title'] ?>" class="img-fluid mb-2">
-                            <h3 id="title" class="fw-bold text-uppercase"><?= $disc['title'] ?></h3>
-                            <div id="author" class="text-muted">
-                                <p class="m-0"><?= $disc['author'] ?></p>
-                                <p class="m-0"><?= $disc['year'] ?></p>
+                        <div class="col">
+                            <div id="album-card" class="text-center p-2 text-white">
+                                <img src="<?= $disc['poster'] ?>" alt="" class="img-fluid mb-2">
+                                <h3 id="title" class="fw-bold text-uppercase"><?= $disc['title'] ?></h3>
+                                <div id="author" class="text-muted">
+                                    <p class="m-0"><?= $disc['author'] ?></p>
+                                    <p class="m-0"><?= $disc['year'] ?></p>
+                                </div>
                             </div>
                         </div>
                     <?php endforeach; ?>
                 </div>
-            </div>
-        </section>
-    </div>
-  </main>
+            </section>
+        </div>
+    </main>
 </body>
 </html>
